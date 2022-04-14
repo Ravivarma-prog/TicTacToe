@@ -1,0 +1,29 @@
+.row-header{
+    margin : 0px auto;
+    padding : 20px 0px 20px 20px;
+    color : purple
+}
+
+.telandemail{
+    color : purple;
+}
+
+.footer{
+    margin : 0px auto;
+    padding : 20px 0px 20px 0px;
+}
+
+body{
+    height: 100%;
+}
+
+.grid-btns{
+    border:2px solid black;
+    width : 50px;
+    height : 50px;
+
+}
+
+#moves{
+    color : purple;
+}

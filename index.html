@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href = "bootstrap-social-gh-pages/bootstrap-social.css">
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    <!-- This is a modal to display the winner -->
+    <!-- This is called in javascript using $("winnerModal").modal() -->
+    <div id = "winnerModal" class = "modal" role = "dialog">
+        <div class = "modal-dialog modal-dialog-centered" role = "content">
+            <div class = "modal-content">
+                <div class = "modal-header">
+                    <h4 class="modal-title">Game Over!</h4>
+                    <button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <p id = "winner">
+                        <!-- Winner text goes here -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class = "jumbotron">
+        <div class = "container">
+            <div class = "row row-header">
+                <!-- This column is to display the logo -->
+                <div class = "col-3 col-md-1">
+                    <img src = "tic-tac-toe.png" class = "img-fluid img-responsive" alt = "TicTacToe">
+                </div>
+                <!-- This column is to display the name in the center of the container -->
+                <div class = "col-9 align-self-center">
+                    <h1>TIC TAC TOE</h1>
+                </div>
+            </div>
+
+            <!-- To test the modal -->
+            <!-- <a data-toggle = "modal" data-target = "#winnerModal" role ="button" class = "btn btn-warning"></a> -->
+
+        </div>
+    </header>
+
+    <!-- Main board to display the game -->
+    <div class = "container row-content">  
+        <div class = "row">
+            <div class = "col-12 col-md-6 offset-md-3">
+                <!-- To display the board -->
+                <div class = "card">
+                    <h2 class = "card-header bg-primary text-white">Lets Play</h2>
+
+                    <div class = "card-body">
+
+                        <!-- To display the grid row-wise -->
+                        <div class = "row text-center">
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "1" onclick = "btn1()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "2" onclick = "btn2()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "3" onclick = "btn3()">
+                            </div>
+                        </div>
+                        <br>
+                        <div class = "row text-center">
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "4" onclick = "btn4()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "5" onclick = "btn5()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id= "6" onclick = "btn6()">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row text-center">
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id ="7" onclick = "btn7()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "8" onclick = "btn8()">
+                            </div>
+                            <div class = "col-4">
+                                <input type = "button" text = "" class ="btn grid-btns btn-danger" value = "" id = "9" onclick = "btn9()">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class = "row m-auto d-flex">
+                           <div class = "col-12 col-sm-12">
+                               <div class = "btn-group" role = "group">
+                                   <input type = "button" class = "btn btn-primary" value = "Reset" onclick="reset()">
+                               </div>
+                               <div class = "btn-group" role = "group">
+                                    <input type = "button" class = "btn btn-primary" value = "Moves" onclick="showMoves()">
+                                </div>
+                           </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br>
+            </div>
+            <div class = "col-12 col-md-3">
+                <h3>History Of Moves</h3>
+                <div id = "moves">
+                    <!-- To display the list of moves -->
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <footer class = "footer">
+        <div class="container">
+            <div class = "row">
+                <!-- This is to display the social buttons and contact information -->
+                <div class="col-10 col-sm-9 col-md-6 offset-2 offset-sm-3 offset-md-2">
+                    <h4>Contact Info.</h4>
+                    <address>
+                        8/53E,Megarali Street<br>
+                        Edayarpalayam, Vellalore<br>
+                        Coimbatore - 641111 <br>
+                        TamilNadu ,India <br>
+                        <br>
+                        <i class = "icon-large icon-mobile-phone"></i> : <a href = "tel:9566390569" class = "telandemail" style="text-decoration: none;">+91 9566390569</a> <br>
+                        <i class="icon-envelope"> </i> : <a href="mailto:ravivarma.mn16@gmail.com" class = "telandemail" style="text-decoration: none;">ravivarma.mn16@gmail.com</a> <br>
+                    </address>
+                </div>
+                <div class = "col-12 col-md-3 align-self-center">
+                    <div class = "text-center">
+                        <a class = "btn btn-social-icon btn-google" href = "mailto:ravivarma.mn16@gmail.com"><i class = "icon-envelope icon-2x"></i></a>
+                        <a class = "btn btn-social-icon btn-linkedin" href = "https://linkedin.com/in/ravivarma-m-99b2a8190"><i class = "icon-linkedin icon-2x"></i></a>
+                        <a class = "btn btn-social-icon btn-github" href = "https://github.com/Ravivarma-prog"><i class = "icon-github icon-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class ="row justify-content-center">
+                <div class = "col-auto">
+                    <p style="color: purple;">Created By Ravivarma M</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src = "index.js"></script>
+</body>
+</html>
